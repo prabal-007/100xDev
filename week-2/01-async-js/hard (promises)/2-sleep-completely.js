@@ -5,6 +5,16 @@
  */
 
 function sleep(milliseconds) {
+    return new Promise(resolve => {
+        setTimeout(resolve, milliseconds)
+    });
 }
+
+// const date = new Date();
+// const start = Date.now();
+// sleep(1000).then(() => {
+//     const end = Date.now();
+//     console.log(`difference -  ${start - end}`)
+// });
 
 module.exports = sleep;

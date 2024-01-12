@@ -1,0 +1,35 @@
+Skip to main content
+Postman Community
+Log In
+How can I read the content of a form-data request body variable in the test script?
+🙋 Help
+request
+form-data body Sep 2020 Aug 24
+Frank dbfs
+3
+Sep '20
+Hello, everybody,
+in a test for a REST web service I create a document on the server with a body form-data variable that has its value read in from a file. In the collection JSON this look like this:
+"body": {
+"mode": "formdata",
+"formdata": [
+{
+"key": "documentParams",
+"value": "{\n... some parameters ...\n}",
+"type": "text"
+},
+{
+"key": "inputStream",
+"type": "file",
+"src": "/C:/testfiles/content3.txt"
+}
+]
+}
+In the test script I read the contents of the document back from the server and now I want to compare what I read with what I have written. I thought the most obvious way to implement this would be to read the value of the contents of the inputStream parameter from the request. I.e. the contents read from the file into this parameter, not the file path.
+Yesterday I spent hours to find out how I can get at the request body form-data parameter. I looked here 71, here 31 and through various forum posts but I could not figure out how to do this.
+My guess is something on the line of
+pm.request.body.formdata.get("inputStream")
+which returns an array of 2 objects. But I can not put it any further.
+So, is there anybody here who knows how to get at the value of a request body form-data variable in the test script? Any help would be greatly appreciated.
+Thank you.
+Frank
